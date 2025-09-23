@@ -77,7 +77,7 @@ public class VentanaPrincipal {
         DefaultTableModel model = new DefaultTableModel(new String[]{"Nombre", "Teléfono", "Correo"}, 0);
         model.addRow(new Object[]{"Nombre", "Telefono", "Correo"}); // Fila de encabezado
 
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/TareaFinal1/contactos.db")) {
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/AgendaContactos/contactos.db")) {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT Nombre, Telefono, Correo FROM CONTACTOS");
             while (rs.next()) {
@@ -108,7 +108,7 @@ public class VentanaPrincipal {
                 Type listType = new TypeToken<List<Map<String, String>>>() {}.getType();
                 List<Map<String, String>> contactos = gson.fromJson(reader, listType);
 
-                try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/TareaFinal1/contactos.db")) {
+                try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/AgendaContactos/contactos.db")) {
                     for (Map<String, String> contacto : contactos) {
                         String nombre = contacto.getOrDefault("Nombre", "");
                         String telefono = contacto.getOrDefault("Telefono", "");
@@ -154,7 +154,7 @@ public class VentanaPrincipal {
         if (seleccion == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
 
-            try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/TareaFinal1/contactos.db")) {
+            try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/AgendaContactos/contactos.db")) {
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * FROM CONTACTOS");
 
@@ -186,7 +186,7 @@ public class VentanaPrincipal {
      * Carga los detalles de un contacto seleccionado en la interfaz.
      */
     private void cargarDetallesContacto(String nombre, String telefono) {
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/TareaFinal1/contactos.db")) {
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/AgendaContactos/contactos.db")) {
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * FROM CONTACTOS WHERE Nombre = ? AND Telefono = ?"
             );
@@ -237,7 +237,7 @@ public class VentanaPrincipal {
 
             int confirm = JOptionPane.showConfirmDialog(null, "¿Estás seguro de eliminar este contacto?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
-                try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/TareaFinal1/contactos.db")) {
+                try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/AgendaContactos/contactos.db")) {
                     PreparedStatement stmt = conn.prepareStatement("DELETE FROM CONTACTOS WHERE Nombre = ? AND Telefono = ?");
                     stmt.setString(1, nombre);
                     stmt.setString(2, telefono);

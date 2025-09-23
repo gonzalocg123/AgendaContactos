@@ -19,11 +19,11 @@ import java.sql.Statement;
  */
 public class Main {
     // URL de conexión a la base de datos SQLite
-    private static final String URL = "jdbc:sqlite:src/TareaFinal1/contactos.db";
+    private static final String URL = "jdbc:sqlite:src/AgendaContactos/contactos.db";
     // Ruta del archivo de base de datos
-    private static final String DB = "src/TareaFinal1/contactos.db";
+    private static final String DB = "src/AgendaContactos/contactos.db";
     // Ruta del archivo SQL con la estructura de la base de datos
-    private static final String SQL_ARCHIVO = "src/TareaFinal1/contactos.sql";
+    private static final String SQL_ARCHIVO = "src/AgendaContactos/contactos.sql";
 
     /**
      * Método principal que inicia la aplicación.

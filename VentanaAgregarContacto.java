@@ -81,7 +81,7 @@ public class VentanaAgregarContacto {
             if (result == JFileChooser.APPROVE_OPTION) {
                 File archivo = chooser.getSelectedFile();
                 String nombreArchivo = archivo.getName();
-                File destino = new File("src/TareaFinal1/imagenes/" + nombreArchivo);
+                File destino = new File("src/AgendaContactos/imagenes/" + nombreArchivo);
                 try {
                     Files.copy(archivo.toPath(), destino.toPath(), StandardCopyOption.REPLACE_EXISTING);
                     rutaImagen = destino.getPath();
@@ -108,7 +108,7 @@ public class VentanaAgregarContacto {
                 return;
             }
 
-            try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/TareaFinal1/contactos.db")) {
+            try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/AgendaContactos/contactos.db")) {
                 PreparedStatement stmt = conn.prepareStatement(
                         "INSERT INTO CONTACTOS (Nombre, Telefono, WebPersonal, Correo, Imagen) VALUES (?, ?, ?, ?, ?)"
                 );
@@ -143,7 +143,7 @@ public class VentanaAgregarContacto {
                 return;
             }
 
-            try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/TareaFinal1/contactos.db")) {
+            try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/AgendaContactos/contactos.db")) {
                 PreparedStatement stmt = conn.prepareStatement(
                         "UPDATE CONTACTOS SET Nombre = ?, Telefono = ?, WebPersonal = ?, Correo = ?, Imagen = ? WHERE Nombre = ? AND Telefono = ?"
                 );
@@ -168,7 +168,7 @@ public class VentanaAgregarContacto {
      * Carga los datos de un contacto existente en los campos de texto para editarlo.
      */
     private void cargarDatosContacto(String nombreOriginal, String telefonoOriginal) {
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/TareaFinal1/contactos.db")) {
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/AgendaContactos/contactos.db")) {
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * FROM CONTACTOS WHERE Nombre = ? AND Telefono = ?"
             );
