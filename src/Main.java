@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -42,7 +43,7 @@ public class Main {
             System.out.println("La base de datos ya existe. No se creará nuevamente.");
         } else {
             try (Connection conn = DriverManager.getConnection(URL);
-                BufferedReader reader = new BufferedReader(new FileReader(SQL_ARCHIVO))) {
+                 BufferedReader reader = new BufferedReader(new FileReader(SQL_ARCHIVO))) {
 
                 StringBuilder sqlBuilder = new StringBuilder();
                 String line;
@@ -64,4 +65,3 @@ public class Main {
         }
     }
 }
-
