@@ -5,25 +5,25 @@ Los contactos se almacenan en **SQLite** y se pueden **añadir, editar, eliminar
 
 ---
 
-## 🚀 Características
+## Características
 
-✅ **Interfaz gráfica intuitiva** con Java Swing  
-✅ **Base de datos SQLite** integrada  
-✅ **CRUD completo** (Crear, Leer, Actualizar y Eliminar contactos)  
-✅ **Importación y exportación en JSON**  
-✅ **Soporte para imágenes de contacto**  
-✅ **Prevención de duplicados** al importar  
-✅ Código **bien estructurado y documentado**
+**Interfaz gráfica intuitiva** con Java Swing  
+**Base de datos SQLite** integrada  
+**CRUD completo** (Crear, Leer, Actualizar y Eliminar contactos)  
+**Importación y exportación en JSON**  
+**Soporte para imágenes de contacto**  
+**Prevención de duplicados** al importar  
+Código **bien estructurado y documentado**
 
 ---
 
-## 🖼️ Captura de Pantalla
+## Captura de Pantalla
 
 ![Agenda de Contactos](./screenshot.png)
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **Java 8+**
 - **Swing** (Interfaz gráfica)
@@ -33,7 +33,7 @@ Los contactos se almacenan en **SQLite** y se pueden **añadir, editar, eliminar
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
     src/
     └── AgendaContactos/
@@ -46,7 +46,7 @@ Los contactos se almacenan en **SQLite** y se pueden **añadir, editar, eliminar
 
 ---
 
-## ▶️ Cómo Ejecutar
+## Cómo Ejecutar
 
 1. Clona el repositorio:
    ```bash
@@ -60,7 +60,7 @@ Los contactos se almacenan en **SQLite** y se pueden **añadir, editar, eliminar
 
 ---
 
-## 📤 Exportar / Importar Contactos
+## Exportar / Importar Contactos
 
 - **Exportar:** Genera un archivo .json con todos los contactos existentes.
 - **Importar:** Permite cargar contactos desde un archivo .json.
@@ -68,7 +68,7 @@ Los contactos se almacenan en **SQLite** y se pueden **añadir, editar, eliminar
 
 ---
 
-## 🏗️ Próximas Mejoras
+## Próximas Mejoras
 - 🔍 Barra de búsqueda para filtrar contactos por nombre o teléfono.
 
 - ☁️ Sincronización con servicios en la nube.
@@ -87,7 +87,7 @@ Los contactos se almacenan en **SQLite** y se pueden **añadir, editar, eliminar
 
 ---
 
-# 📜 Licencia
+# Licencia
 
 Este proyecto se distribuye bajo la licencia **MIT**.  
 Eres libre de usarlo, modificarlo y compartirlo, siempre mencionando al autor original.
